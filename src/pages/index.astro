@@ -1,16 +1,1481 @@
 ---
-
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Energía Solar - Reduce tu factura eléctrica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="text-gray-dark font-sans">
+    <!-- HEADER/NAVEGACIÓN -->
+    <header class="fixed top-0 z-50 w-full bg-white shadow-sm">
+      <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div
+              class="bg-primary flex h-10 w-10 items-center justify-center rounded-lg"
+            >
+              <span class="text-xl font-bold text-white">⚡</span>
+            </div>
+            <span class="text-primary-dark text-xl font-bold">EnergiApp</span>
+          </div>
+
+          <div class="hidden items-center space-x-8 md:flex">
+            <a
+              href="#inicio"
+              class="text-gray-dark hover:text-primary font-medium">Inicio</a
+            >
+            <a
+              href="#nosotros"
+              class="text-gray-dark hover:text-primary font-medium">Nosotros</a
+            >
+            <a
+              href="#caracteristicas"
+              class="text-gray-dark hover:text-primary font-medium"
+              >Características</a
+            >
+            <a
+              href="#descargar"
+              class="text-gray-dark hover:text-primary font-medium">Descargar</a
+            >
+          </div>
+
+          <div class="md:hidden">
+            <button class="text-gray-dark">
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      id="inicio"
+      class="bg-gradient-to-br from-green-50 to-blue-50 pt-20 pb-16"
+    >
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center lg:flex-row">
+          <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+            <h1 class="text-hero text-gray-dark mb-6 leading-tight font-bold">
+              Reduce tu factura eléctrica con energía solar
+            </h1>
+            <p class="mb-8 text-xl leading-relaxed text-gray-600">
+              Únete a miles de colombianos que ya generan su propia energía
+              limpia. Calcula, diseña e instala tu sistema solar desde tu
+              celular.
+            </p>
+
+            <div
+              class="mb-8 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-primary hover:bg-primary-dark rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors"
+              >
+                Descargar App Gratis
+              </button>
+              <button
+                class="border-primary text-primary hover:bg-primary rounded-lg border-2 px-8 py-4 text-lg font-medium transition-colors hover:text-white"
+              >
+                Involúcrate
+              </button>
+            </div>
+
+            <div class="flex flex-wrap items-center space-x-6 text-sm">
+              <div class="flex items-center space-x-2">
+                <span class="text-2xl">📱</span>
+                <span class="font-medium">100% Gratis</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-2xl">🇨🇴</span>
+                <span class="font-medium">Hecho en Colombia</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="text-2xl">💰</span>
+                <span class="font-medium">Ahorra hasta 70%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="relative">
+              <div
+                class="mx-auto max-w-sm rounded-3xl bg-gray-200 p-8 shadow-2xl"
+              >
+                <div class="rounded-2xl bg-white p-6 shadow-lg">
+                  <div class="mb-4 text-center">
+                    <h3 class="mb-2 text-lg font-bold">Demanda Energética</h3>
+                    <div class="bg-gray-light rounded-lg p-4">
+                      <p class="text-sm text-gray-600">Calcular consumo...</p>
+                    </div>
+                  </div>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>🏠 Nevera</span>
+                      <span>150W</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>💡 Luces</span>
+                      <span>200W</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>📺 TV</span>
+                      <span>100W</span>
+                    </div>
+                  </div>
+                  <button
+                    class="bg-primary mt-4 w-full rounded-lg py-2 text-sm text-white"
+                  >
+                    Siguiente →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SOFÍA (AHORRO FAMILIAR) -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Ahorro inmediato para tu familia
+        </h2>
+        <div class="flex flex-col items-center lg:flex-row">
+          <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+            <p class="mb-6 text-xl text-gray-600">
+              Ve resultados desde el primer mes. Nuestra app te muestra
+              exactamente cuánto puedes ahorrar en tu factura eléctrica y cómo
+              lograrlo sin complicaciones técnicas.
+            </p>
+
+            <div class="mb-8 space-y-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-primary text-xl">✅</span>
+                <span class="font-medium"
+                  >Cálculo instantáneo: Descubre tu ahorro en menos de 5 minutos</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-primary text-xl">✅</span>
+                <span class="font-medium"
+                  >Componentes locales: Precios reales del mercado colombiano</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-primary text-xl">✅</span>
+                <span class="font-medium"
+                  >Instalación simple: Guías paso a paso que cualquiera puede
+                  seguir</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-primary hover:bg-primary-dark rounded-lg px-6 py-3 font-medium text-white transition-colors"
+              >
+                Calcular mi ahorro ahora
+              </button>
+              <button
+                class="border-primary text-primary hover:bg-primary rounded-lg border px-6 py-3 font-medium transition-colors hover:text-white"
+              >
+                Ver ejemplo real
+              </button>
+            </div>
+
+            <div class="bg-success/10 inline-block rounded-lg p-4">
+              <span class="text-success font-bold"
+                >💰 Familias ahorran promedio $245,000 mensual</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="mx-auto max-w-md rounded-xl bg-white p-6 shadow-lg">
+              <h3 class="mb-4 text-center text-lg font-bold">
+                Calculadora de Ahorro
+              </h3>
+              <div class="space-y-4">
+                <div
+                  class="flex items-center justify-between rounded-lg bg-red-50 p-4"
+                >
+                  <span class="font-medium">Antes:</span>
+                  <span class="text-xl font-bold text-red-600">$350,000</span>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl">⬇️</div>
+                  <span class="text-gray-500">Con paneles solares</span>
+                </div>
+                <div
+                  class="flex items-center justify-between rounded-lg bg-green-50 p-4"
+                >
+                  <span class="font-medium">Después:</span>
+                  <span class="text-xl font-bold text-green-600">$105,000</span>
+                </div>
+                <div class="bg-primary/10 rounded-lg p-4 text-center">
+                  <span class="text-primary text-lg font-bold"
+                    >Ahorro: $245,000/mes</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SANTIAGO (ANALÍTICO) -->
+    <section class="bg-gray-light py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Datos precisos para decisiones informadas
+        </h2>
+        <div class="flex flex-col items-center lg:flex-row">
+          <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+            <p class="mb-6 text-xl text-gray-600">
+              Toma decisiones inteligentes basadas en datos reales. Nuestra app
+              utiliza información técnica actualizada y precios del mercado
+              local para darte proyecciones confiables de retorno de inversión.
+            </p>
+
+            <div class="mb-8 space-y-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-secondary text-xl">📊</span>
+                <span class="font-medium"
+                  >Análisis técnico completo: Cálculos de dimensionamiento
+                  certificados</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-secondary text-xl">💹</span>
+                <span class="font-medium"
+                  >ROI transparente: Tiempo real de recuperación de inversión</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-secondary text-xl">🔍</span>
+                <span class="font-medium"
+                  >Comparativas detalladas: Precios verificados de múltiples
+                  proveedores</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-secondary rounded-lg px-6 py-3 font-medium text-white transition-colors hover:bg-blue-600"
+              >
+                Ver análisis completo
+              </button>
+              <button
+                class="border-secondary text-secondary hover:bg-secondary rounded-lg border px-6 py-3 font-medium transition-colors hover:text-white"
+              >
+                Descargar datos técnicos
+              </button>
+            </div>
+
+            <div class="bg-secondary/10 inline-block rounded-lg p-4">
+              <span class="text-secondary font-bold"
+                >🎯 Precisión 95%+ en estimaciones de costos</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="mx-auto max-w-md rounded-xl bg-white p-6 shadow-lg">
+              <h3 class="mb-4 text-center text-lg font-bold">
+                Dashboard Técnico
+              </h3>
+              <div class="space-y-4">
+                <div class="rounded-lg bg-gray-100 p-4">
+                  <div class="mb-2 flex items-center justify-between">
+                    <span class="text-sm font-medium">ROI Proyectado</span>
+                    <span class="text-primary font-bold">4.2 años</span>
+                  </div>
+                  <div class="h-2 w-full rounded-full bg-gray-200">
+                    <div class="bg-primary h-2 rounded-full" style="width: 70%">
+                    </div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="rounded-lg bg-blue-50 p-3 text-center">
+                    <div class="text-secondary text-2xl font-bold">85%</div>
+                    <div class="text-xs text-gray-600">Eficiencia</div>
+                  </div>
+                  <div class="rounded-lg bg-green-50 p-3 text-center">
+                    <div class="text-primary text-2xl font-bold">12</div>
+                    <div class="text-xs text-gray-600">Paneles Req.</div>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-gray-50 p-4">
+                  <div class="mb-2 text-sm text-gray-600">Inversión Total</div>
+                  <div class="text-xl font-bold">$15,500,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN MATÍAS (INNOVADOR) -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Tecnología open source para el futuro
+        </h2>
+        <div class="flex flex-col items-center lg:flex-row">
+          <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+            <p class="mb-6 text-xl text-gray-600">
+              Sé parte de la revolución energética con tecnología transparente y
+              colaborativa. Código abierto que puedes auditar, modificar y
+              mejorar, construyendo juntos el futuro de la energía solar en
+              Colombia.
+            </p>
+
+            <div class="mb-8 space-y-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-warning text-xl">🔓</span>
+                <span class="font-medium"
+                  >100% código abierto: Transparencia total, sin cajas negras</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-warning text-xl">🚀</span>
+                <span class="font-medium"
+                  >Innovación continua: Actualizaciones constantes de la
+                  comunidad</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-warning text-xl">🌍</span>
+                <span class="font-medium"
+                  >Impacto escalable: Tecnología replicable para toda
+                  Latinoamérica</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-gray-dark rounded-lg px-6 py-3 font-medium text-white transition-colors hover:bg-gray-700"
+              >
+                Explorar código en GitHub
+              </button>
+              <button
+                class="border-gray-dark text-gray-dark hover:bg-gray-dark rounded-lg border px-6 py-3 font-medium transition-colors hover:text-white"
+              >
+                Contribuir al proyecto
+              </button>
+            </div>
+
+            <div class="mb-4 flex flex-wrap gap-2">
+              <span
+                class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+                >PHP</span
+              >
+              <span
+                class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
+                >Python</span
+              >
+              <span
+                class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
+                >JavaScript</span
+              >
+              <span
+                class="rounded-full bg-red-100 px-3 py-1 text-sm text-red-800"
+                >HTML</span
+              >
+              <span
+                class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+                >CSS</span
+              >
+              <span
+                class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+                >MySQL</span
+              >
+              <span
+                class="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-800"
+                >Kotlin</span
+              >
+              <span
+                class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800"
+                >Android</span
+              >
+            </div>
+
+            <div class="bg-warning/10 inline-block rounded-lg p-4">
+              <span class="text-warning font-bold"
+                >🎓 Proyecto académico convertido en solución real</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div
+              class="mx-auto max-w-md rounded-xl bg-gray-900 p-6 text-white shadow-lg"
+            >
+              <h3 class="mb-4 text-center text-lg font-bold">
+                GitHub Repository
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm">⭐ Stars</span>
+                  <span class="font-bold">156</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm">🍴 Forks</span>
+                  <span class="font-bold">23</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm">👥 Contributors</span>
+                  <span class="font-bold">8</span>
+                </div>
+                <div class="rounded bg-gray-800 p-3 font-mono text-sm">
+                  <div class="text-green-400">$ git clone energiapp</div>
+                  <div class="text-gray-400">Cloning repository...</div>
+                  <div class="text-blue-400">✓ Ready to contribute!</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-sm text-gray-400">Último commit</div>
+                  <div class="font-medium">hace 2 días</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN LUCIANA (COLABORATIVA) -->
+    <section class="bg-gray-light py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Apoyo paso a paso para tu comunidad
+        </h2>
+        <div class="flex flex-col items-center lg:flex-row">
+          <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+            <p class="mb-6 text-xl text-gray-600">
+              No estás solo en este camino. Nuestra app te acompaña con guías
+              claras, recomendaciones confiables y una comunidad que comparte
+              experiencias para que tomes las mejores decisiones para tu hogar.
+            </p>
+
+            <div class="mb-8 space-y-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-primary text-xl">🤝</span>
+                <span class="font-medium"
+                  >Soporte personalizado: Equipo técnico disponible para
+                  resolver dudas</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-primary text-xl">📍</span>
+                <span class="font-medium"
+                  >Proveedores verificados: Red de instaladores y distribuidores
+                  confiables</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-primary text-xl">👥</span>
+                <span class="font-medium"
+                  >Comunidad activa: Experiencias reales de otros usuarios
+                  colombianos</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-primary hover:bg-primary-dark rounded-lg px-6 py-3 font-medium text-white transition-colors"
+              >
+                Comenzar con guía
+              </button>
+              <button
+                class="border-primary text-primary hover:bg-primary rounded-lg border px-6 py-3 font-medium transition-colors hover:text-white"
+              >
+                Contactar soporte
+              </button>
+            </div>
+
+            <div class="bg-primary/10 inline-block rounded-lg p-4">
+              <span class="text-primary font-bold"
+                >🏪 Red de 150+ proveedores verificados en Colombia</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="mx-auto max-w-md rounded-xl bg-white p-6 shadow-lg">
+              <h3 class="mb-4 text-center text-lg font-bold">
+                Guía Paso a Paso
+              </h3>
+              <div class="space-y-4">
+                <div
+                  class="flex items-center space-x-3 rounded-lg bg-green-50 p-3"
+                >
+                  <div
+                    class="bg-primary flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white"
+                  >
+                    1
+                  </div>
+                  <span class="font-medium">Calcular demanda energética</span>
+                  <span class="text-green-600">✓</span>
+                </div>
+                <div
+                  class="flex items-center space-x-3 rounded-lg bg-green-50 p-3"
+                >
+                  <div
+                    class="bg-primary flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white"
+                  >
+                    2
+                  </div>
+                  <span class="font-medium">Dimensionar sistema</span>
+                  <span class="text-green-600">✓</span>
+                </div>
+                <div
+                  class="flex items-center space-x-3 rounded-lg bg-blue-50 p-3"
+                >
+                  <div
+                    class="bg-secondary flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white"
+                  >
+                    3
+                  </div>
+                  <span class="font-medium">Seleccionar componentes</span>
+                  <span class="text-blue-600">▶</span>
+                </div>
+                <div
+                  class="flex items-center space-x-3 rounded-lg bg-gray-50 p-3"
+                >
+                  <div
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-300 text-sm font-bold text-white"
+                  >
+                    4
+                  </div>
+                  <span class="font-medium text-gray-500"
+                    >Encontrar instalador</span
+                  >
+                </div>
+                <div class="bg-secondary/10 rounded-lg p-4">
+                  <div class="text-secondary mb-2 text-sm font-medium">
+                    💬 Chat de Soporte
+                  </div>
+                  <div class="text-xs text-gray-600">
+                    "¿Dudas sobre componentes? Nuestro equipo te ayuda en tiempo
+                    real"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTAJAS COMPETITIVAS -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          ¿Por qué elegir nuestra app?
+        </h2>
+        <p class="mb-12 text-center text-xl text-gray-600">
+          Comparamos con las principales herramientas del mercado para que veas
+          la diferencia
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full overflow-hidden rounded-xl bg-white shadow-lg">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="px-6 py-4 text-left font-bold">Característica</th>
+                <th class="bg-primary-dark px-6 py-4 text-center font-bold"
+                  >Nuestra App</th
+                >
+                <th class="px-6 py-4 text-center font-bold"
+                  >Competencia Profesional</th
+                >
+                <th class="px-6 py-4 text-center font-bold"
+                  >Herramientas Libres</th
+                >
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 font-medium">💰 Costo anual</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >GRATIS</td
+                >
+                <td class="px-6 py-4 text-center text-red-600">$1,200+ USD</td>
+                <td class="px-6 py-4 text-center text-green-600">Gratis</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">📱 Plataforma</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >App móvil</td
+                >
+                <td class="px-6 py-4 text-center">Solo computadora</td>
+                <td class="px-6 py-4 text-center">Solo computadora</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">🇨🇴 Info local</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >Precios Colombia</td
+                >
+                <td class="px-6 py-4 text-center">Datos genéricos globales</td>
+                <td class="px-6 py-4 text-center text-red-600"
+                  >Sin datos locales</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">🎓 Facilidad</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >Sin conocimientos técnicos</td
+                >
+                <td class="px-6 py-4 text-center text-red-600"
+                  >Requiere expertise</td
+                >
+                <td class="px-6 py-4 text-center text-red-600"
+                  >Muy complejo para usuarios comunes</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">🔓 Código</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >100% abierto</td
+                >
+                <td class="px-6 py-4 text-center text-red-600">Propietario</td>
+                <td class="px-6 py-4 text-center text-green-600"
+                  >Código abierto</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">⚡ Velocidad</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >Resultados en minutos</td
+                >
+                <td class="px-6 py-4 text-center">Horas de configuración</td>
+                <td class="px-6 py-4 text-center text-red-600"
+                  >Días de aprendizaje</td
+                >
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-medium">🛠️ Soporte</td>
+                <td
+                  class="text-primary bg-green-50 px-6 py-4 text-center font-bold"
+                  >Comunidad + equipo</td
+                >
+                <td class="px-6 py-4 text-center">Solo documentación</td>
+                <td class="px-6 py-4 text-center text-red-600"
+                  >Solo documentación técnica</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-12 text-center">
+          <div
+            class="bg-warning/10 border-warning mb-6 inline-block rounded-lg border p-6"
+          >
+            <h3 class="text-warning mb-2 text-2xl font-bold">
+              💰 AHORRA $1,200+ USD AL AÑO
+            </h3>
+            <p class="text-gray-600">
+              Somos la única solución que combina lo mejor de ambos mundos:
+              <strong>gratuita Y fácil de usar</strong>. Democratizamos el
+              acceso real a la energía solar.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+          >
+            <button
+              class="bg-primary hover:bg-primary-dark rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors"
+            >
+              Probar gratis ahora
+            </button>
+            <button
+              class="border-primary text-primary hover:bg-primary rounded-lg border px-8 py-4 text-lg font-medium transition-colors hover:text-white"
+            >
+              Ver todas las ventajas
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="bg-gray-light py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Lo que dicen nuestros usuarios
+        </h2>
+        <p class="mb-12 text-center text-xl text-gray-600">
+          Historias reales de colombianos que ya generan su propia energía
+        </p>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Testimonio Sofia -->
+          <div class="rounded-xl bg-white p-6 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-pink-100 text-2xl"
+              >
+                👩
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">María Elena Rodríguez</h4>
+                <p class="text-sm text-gray-600">
+                  Madre de familia - Villavicencio, Meta
+                </p>
+              </div>
+            </div>
+            <p class="mb-4 text-gray-700 italic">
+              "En solo 3 meses ya estoy ahorrando $280,000 en mi factura de luz.
+              La app me explicó todo tan fácil que hasta mi esposo se
+              sorprendió..."
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+              <div class="bg-success/10 rounded-full px-3 py-1">
+                <span class="text-success text-sm font-bold"
+                  >Ahorro: $280,000/mes</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio Santiago -->
+          <div class="rounded-xl bg-white p-6 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-2xl"
+              >
+                👨
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">Carlos Andrés Méndez</h4>
+                <p class="text-sm text-gray-600">Contador - Paipa, Boyacá</p>
+              </div>
+            </div>
+            <p class="mb-4 text-gray-700 italic">
+              "Revisé los cálculos tres veces antes de decidirme. La precisión
+              es impresionante: los números coincidieron exactamente con mi
+              factura real..."
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+              <div class="bg-secondary/10 rounded-full px-3 py-1">
+                <span class="text-secondary text-sm font-bold"
+                  >ROI: 4.2 años</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio Matías -->
+          <div class="rounded-xl bg-white p-6 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-2xl"
+              >
+                👨
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">Diego Alejandro Torres</h4>
+                <p class="text-sm text-gray-600">Desarrollador - Bogotá D.C</p>
+              </div>
+            </div>
+            <p class="mb-4 text-gray-700 italic">
+              "Me encanta que sea código abierto. Ya contribuí con mejoras en
+              GitHub y veo el potencial enorme para expandirse por
+              Latinoamérica..."
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+              <div class="rounded-full bg-gray-100 px-3 py-1">
+                <span class="text-sm font-bold text-gray-700"
+                  >Contribuidor GitHub</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio Luciana -->
+          <div class="rounded-xl bg-white p-6 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-2xl"
+              >
+                👩
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">Ana Lucía Vásquez</h4>
+                <p class="text-sm text-gray-600">
+                  Líder comunitaria - Barranquillas
+                </p>
+              </div>
+            </div>
+            <p class="mb-4 text-gray-700 italic">
+              "El equipo nos acompañó todo el proceso. Conectaron nuestra
+              comunidad con proveedores confiables y ahora 15 familias tenemos
+              paneles solares..."
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+              <div class="bg-primary/10 rounded-full px-3 py-1">
+                <span class="text-primary text-sm font-bold">15 familias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <div
+            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+          >
+            <button
+              class="bg-primary hover:bg-primary-dark rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors"
+            >
+              Únete a nuestra comunidad
+            </button>
+            <button
+              class="border-primary text-primary hover:bg-primary rounded-lg border px-8 py-4 text-lg font-medium transition-colors hover:text-white"
+            >
+              Comenta y valora
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLABORACIÓN -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Ayúdanos a democratizar la energía solar
+        </h2>
+        <p class="mb-12 text-center text-xl text-gray-600">
+          Tu apoyo permite que más colombianos accedan a energía limpia y
+          económica
+        </p>
+
+        <div class="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <!-- Meta Actual -->
+          <div class="bg-primary/5 border-primary rounded-xl border p-6">
+            <div class="mb-4 text-center">
+              <span class="text-4xl">🎯</span>
+              <h3 class="text-primary mt-2 text-xl font-bold">
+                META ACTUAL: $65,000 COP
+              </h3>
+              <p class="font-medium text-gray-600">
+                Mantener servicios online por 1 mes
+              </p>
+            </div>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center space-x-2">
+                <span class="text-primary">•</span>
+                <span>Servidores y bases de datos actualizadas</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-primary">•</span>
+                <span>Precios de componentes en tiempo real</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-primary">•</span>
+                <span>Soporte técnico disponible 24/7</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Meta Expansión -->
+          <div class="bg-secondary/5 border-secondary rounded-xl border p-6">
+            <div class="mb-4 text-center">
+              <span class="text-4xl">🌎</span>
+              <h3 class="text-secondary mt-2 text-xl font-bold">
+                META EXPANSIÓN: $3,000 USD
+              </h3>
+              <p class="font-medium text-gray-600">
+                Llevar la app a un nuevo país
+              </p>
+            </div>
+            <ul class="space-y-2 text-gray-700">
+              <li class="flex items-center space-x-2">
+                <span class="text-secondary">•</span>
+                <span>Investigación de mercado local</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-secondary">•</span>
+                <span>Adaptación de precios y proveedores</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-secondary">•</span>
+                <span>Red de soporte en nuevo país</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Formas de Colaborar -->
+        <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="text-center">
+            <div class="mb-4 text-5xl">💰</div>
+            <h3 class="mb-4 text-xl font-bold">DONACIONES ECONÓMICAS</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Transferencia bancaria (disponible ahora)</li>
+              <li>• Nequi/Bancolombia (próximamente)</li>
+              <li>• Desde $10,000 COP hace la diferencia</li>
+            </ul>
+          </div>
+
+          <div class="text-center">
+            <div class="mb-4 text-5xl">👨‍💻</div>
+            <h3 class="mb-4 text-xl font-bold">CONTRIBUCIONES TÉCNICAS</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Código en GitHub</li>
+              <li>• Reportar bugs y mejoras</li>
+              <li>• Testing en diferentes dispositivos</li>
+            </ul>
+          </div>
+
+          <div class="text-center">
+            <div class="mb-4 text-5xl">📢</div>
+            <h3 class="mb-4 text-xl font-bold">DIFUSIÓN DEL PROYECTO</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>• Compartir con familiares y amigos</li>
+              <li>• Redes sociales y comunidades</li>
+              <li>• Presentar en eventos locales</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-gray-light mb-8 rounded-xl p-8 text-center">
+          <p class="text-lg leading-relaxed text-gray-700 italic">
+            "Nacimos como una tesis académica en la Universidad Santo Tomás y
+            crecimos hasta convertirnos en una herramienta que está
+            transformando vidas. Con tu apoyo, podemos llegar a cada rincón de
+            Colombia y Latinoamérica."
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+          >
+            <button
+              class="bg-primary hover:bg-primary-dark rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors"
+            >
+              Donar ahora
+            </button>
+            <button
+              class="border-gray-dark text-gray-dark hover:bg-gray-dark rounded-lg border px-8 py-4 text-lg font-medium transition-colors hover:text-white"
+            >
+              Contribuir en GitHub
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="bg-gray-light py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          El equipo detrás de la revolución solar
+        </h2>
+        <p class="mb-12 text-center text-xl text-gray-600">
+          Un proyecto académico de la Universidad Santo Tomás que se convirtió
+          en solución real para Colombia
+        </p>
+
+        <!-- Respaldo Académico -->
+        <div class="mb-12 rounded-xl bg-white p-8 text-center shadow-lg">
+          <div class="mb-4 text-5xl">🎓</div>
+          <h3 class="text-primary-dark mb-4 text-2xl font-bold">
+            UNIVERSIDAD SANTO TOMÁS
+          </h3>
+          <p class="mb-4 text-lg font-medium text-gray-700">
+            Maestría en Tecnologías Limpias
+          </p>
+          <p class="mb-6 text-gray-600">
+            Programa enfocado en soluciones sostenibles para Colombia
+          </p>
+          <a
+            href="https://usantotomas.edu.co/maestria-en-tecnologias-limpia"
+            class="text-secondary hover:underline"
+          >
+            usantotomas.edu.co/maestria-en-tecnologias-limpia
+          </a>
+          <div class="bg-secondary/10 mt-6 rounded-lg p-4">
+            <p class="text-gray-700 italic">
+              "Este proyecto nació como una tesis de maestría y evolucionó hasta
+              convertirse en una herramienta que democratiza el acceso a la
+              energía solar en Colombia."
+            </p>
+          </div>
+        </div>
+
+        <!-- Equipo -->
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <!-- Magdiel -->
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg">
+            <div
+              class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-blue-100 text-4xl"
+            >
+              👨‍💻
+            </div>
+            <h3 class="mb-2 text-xl font-bold">MAGDIEL MÁRQUEZ HERNÁNDEZ</h3>
+            <p class="text-secondary mb-4 font-medium">
+              Desarrollador Full Stack - Matemático
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>
+                • <strong>+10 años de experiencia</strong> en desarrollo de software
+              </li>
+              <li>
+                • <strong>Especialidades:</strong> HTML, CSS, JavaScript, PHP, Python,
+                MySQL
+              </li>
+              <li>
+                • <strong>Pasión:</strong> Resolver problemas complejos con soluciones
+                simples
+              </li>
+            </ul>
+          </div>
+
+          <!-- Román -->
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg">
+            <div
+              class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-yellow-100 text-4xl"
+            >
+              ⚡
+            </div>
+            <h3 class="mb-2 text-xl font-bold">ROMÁN FABIÁN PÉREZ FIGUEROA</h3>
+            <p class="text-warning mb-4 font-medium">Ingeniero Electricista</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>
+                • <strong>Profesional Sénior</strong> en sector eléctrico colombiano
+              </li>
+              <li>
+                • <strong>Especialista</strong> en proyectos energéticos y sistemas
+                fotovoltaicos
+              </li>
+              <li>
+                • <strong>Experiencia:</strong> Gestión de infraestructura eléctrica
+                y energías renovables
+              </li>
+            </ul>
+          </div>
+
+          <!-- Deiver -->
+          <div class="rounded-xl bg-white p-6 text-center shadow-lg">
+            <div
+              class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-green-100 text-4xl"
+            >
+              🌱
+            </div>
+            <h3 class="mb-2 text-xl font-bold">DEIVER SAAVEDRA COTRINA</h3>
+            <p class="text-primary mb-4 font-medium">
+              M.Sc. en Energías Renovables (Tutor académico)
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>
+                • <strong>Administrador Ambiental</strong> con especialización en
+                evaluación de proyectos
+              </li>
+              <li>
+                • <strong>Experto</strong> en energías renovables y gestión integral
+                de residuos
+              </li>
+              <li>
+                • <strong>Experiencia:</strong> Sectores construcción, industria
+                petrolera, energético y minero
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Misión -->
+        <div
+          class="bg-primary/5 border-primary rounded-xl border p-8 text-center"
+        >
+          <h3 class="text-primary-dark mb-4 text-2xl font-bold">
+            🎯 NUESTRA MISIÓN
+          </h3>
+          <p class="text-lg leading-relaxed text-gray-700 italic">
+            "Hacer que la energía solar sea accesible, comprensible y factible
+            para todos los colombianos, sin importar su nivel técnico o
+            económico."
+          </p>
+        </div>
+
+        <div class="mt-8 text-center">
+          <div
+            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+          >
+            <button
+              class="bg-secondary rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-blue-600"
+            >
+              Conocer más del proyecto
+            </button>
+            <button
+              class="border-secondary text-secondary hover:bg-secondary rounded-lg border px-8 py-4 text-lg font-medium transition-colors hover:text-white"
+            >
+              Contactar al equipo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESCARGA/CONTACTO -->
+    <section id="descargar" class="bg-white py-16">
+      <div class="container mx-auto px-6">
+        <h2 class="text-section mb-4 text-center font-bold">
+          Comienza tu revolución energética hoy
+        </h2>
+        <p class="mb-12 text-center text-xl text-gray-600">
+          Descarga la app y da el primer paso hacia tu independencia energética
+        </p>
+
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <!-- Descarga -->
+          <div class="text-center lg:text-left">
+            <h3 class="mb-6 text-2xl font-bold">📱 DESCARGA LA APP</h3>
+
+            <div class="mb-6">
+              <h4 class="mb-4 text-lg font-bold">PRÓXIMAMENTE EN:</h4>
+              <div class="space-y-3">
+                <div
+                  class="flex items-center justify-center space-x-3 lg:justify-start"
+                >
+                  <span class="text-2xl">🤖</span>
+                  <span class="font-medium">Google Play Store (Android)</span>
+                </div>
+                <div
+                  class="flex items-center justify-center space-x-3 lg:justify-start"
+                >
+                  <span class="text-2xl">📋</span>
+                  <span class="font-medium">Versión web (navegador móvil)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <h4 class="mb-4 text-lg font-bold">
+                CARACTERÍSTICAS DEL DISPOSITIVO:
+              </h4>
+              <ul class="space-y-2 text-gray-600">
+                <li>• Android 6.0 o superior</li>
+                <li>• 50MB de espacio libre</li>
+                <li>• Conexión a internet (solo para actualizaciones)</li>
+              </ul>
+            </div>
+
+            <div class="bg-secondary/10 mb-6 rounded-lg p-4">
+              <p class="text-secondary font-medium">
+                💡 <strong>Mientras tanto:</strong> Déjanos tu email y te avisamos
+                cuando esté disponible
+              </p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="bg-gray-light rounded-lg p-6">
+              <h4 class="mb-4 text-lg font-bold">📬 NEWSLETTER</h4>
+              <p class="mb-4 text-gray-600">¿Quieres estar al día?</p>
+              <ul class="mb-4 space-y-1 text-sm text-gray-600">
+                <li>• Actualizaciones de la app</li>
+                <li>• Noticias de energía solar en Colombia</li>
+                <li>• Tips de ahorro energético</li>
+                <li>• Casos de éxito de nuestra comunidad</li>
+              </ul>
+              <div class="flex space-x-2">
+                <input
+                  type="email"
+                  placeholder="tu@email.com"
+                  class="focus:ring-primary flex-1 rounded-lg border px-4 py-2 focus:ring-2 focus:outline-none"
+                />
+                <button
+                  class="bg-primary hover:bg-primary-dark rounded-lg px-6 py-2 text-white transition-colors"
+                >
+                  Suscribir
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div>
+            <h3 class="mb-6 text-2xl font-bold">✉️ FORMULARIO DE CONTACTO</h3>
+
+            <form class="space-y-6">
+              <div>
+                <label class="mb-2 block font-medium text-gray-700"
+                  >¿En qué podemos ayudarte?</label
+                >
+                <select
+                  class="focus:ring-primary w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
+                >
+                  <option>Selecciona el tipo de consulta</option>
+                  <option
+                    >🔧 Consulta técnica - Dudas sobre instalación o componentes</option
+                  >
+                  <option
+                    >🤝 Colaboración/Donación - Quiero apoyar el proyecto</option
+                  >
+                  <option
+                    >📰 Prensa/Medios - Entrevistas y notas periodísticas</option
+                  >
+                  <option
+                    >🆘 Soporte general - Problemas con la app o sugerencias</option
+                  >
+                </select>
+              </div>
+
+              <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div>
+                  <label class="mb-2 block font-medium text-gray-700"
+                    >Nombre completo</label
+                  >
+                  <input
+                    type="text"
+                    class="focus:ring-primary w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="mb-2 block font-medium text-gray-700"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="focus:ring-primary w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div>
+                  <label class="mb-2 block font-medium text-gray-700"
+                    >Teléfono (opcional)</label
+                  >
+                  <input
+                    type="tel"
+                    class="focus:ring-primary w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="mb-2 block font-medium text-gray-700"
+                    >Ciudad/Departamento</label
+                  >
+                  <input
+                    type="text"
+                    class="focus:ring-primary w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="mb-2 block font-medium text-gray-700"
+                  >Mensaje</label
+                >
+                <textarea
+                  rows="4"
+                  class="focus:ring-primary w-full rounded-lg border px-4 py-3 focus:ring-2 focus:outline-none"
+                  placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="bg-primary hover:bg-primary-dark w-full rounded-lg py-3 font-medium text-white transition-colors"
+              >
+                Enviar consulta
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Llamada final -->
+        <div class="mt-16 text-center">
+          <div
+            class="from-primary to-secondary rounded-xl bg-gradient-to-r p-8 text-white"
+          >
+            <h3 class="mb-4 text-2xl font-bold">
+              🌟 Únete a la revolución energética colombiana
+            </h3>
+            <p class="mb-6 text-lg">
+              Cada descarga nos acerca más a un país más sostenible e
+              independiente energéticamente.
+            </p>
+
+            <div
+              class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="text-primary rounded-lg bg-white px-8 py-4 text-lg font-medium transition-colors hover:bg-gray-100"
+              >
+                Descargar cuando esté lista
+              </button>
+              <button
+                class="hover:text-primary rounded-lg border-2 border-white px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-white"
+              >
+                Donar al proyecto
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-dark py-12 text-white">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <!-- Logo y descripción -->
+          <div>
+            <div class="mb-4 flex items-center space-x-2">
+              <div
+                class="bg-primary flex h-10 w-10 items-center justify-center rounded-lg"
+              >
+                <span class="text-xl font-bold text-white">⚡</span>
+              </div>
+              <span class="text-xl font-bold">EnergiApp</span>
+            </div>
+            <p class="text-sm leading-relaxed text-gray-300">
+              Democratizando el acceso a la energía solar en Colombia a través
+              de tecnología libre y abierta.
+            </p>
+          </div>
+
+          <!-- Navegación -->
+          <div>
+            <h4 class="mb-4 font-bold">NAVEGACIÓN</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="#inicio" class="transition-colors hover:text-white"
+                  >• Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#caracteristicas"
+                  class="transition-colors hover:text-white"
+                  >• Características</a
+                >
+              </li>
+              <li>
+                <a href="#descargar" class="transition-colors hover:text-white"
+                  >• Descargar</a
+                >
+              </li>
+              <li>
+                <a href="#" class="transition-colors hover:text-white"
+                  >• Testimonios</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Proyecto -->
+          <div>
+            <h4 class="mb-4 font-bold">PROYECTO</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="#nosotros" class="transition-colors hover:text-white"
+                  >• Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://usantotomas.edu.co/maestria-en-tecnologias-limpia"
+                  class="transition-colors hover:text-white">• Universidad</a
+                >
+              </li>
+              <li>
+                <a href="#" class="transition-colors hover:text-white"
+                  >• Colaborar</a
+                >
+              </li>
+              <li>
+                <a href="#" class="transition-colors hover:text-white"
+                  >• Donar</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div>
+            <h4 class="mb-4 font-bold">CONTACTO</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a
+                  href="mailto:contact@energiapp.co"
+                  class="transition-colors hover:text-white">• Email</a
+                >
+              </li>
+              <li>
+                <a href="#" class="transition-colors hover:text-white"
+                  >• GitHub</a
+                >
+              </li>
+              <li>
+                <a href="#" class="transition-colors hover:text-white"
+                  >• LinkedIn</a
+                >
+              </li>
+              <li>
+                <a href="#" class="transition-colors hover:text-white"
+                  >• Twitter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-8 border-gray-600" />
+
+        <div class="text-center text-gray-300">
+          <p class="mb-2">
+            © 2024 App Energía Solar Colombia - Universidad Santo Tomás
+          </p>
+          <p class="text-sm">Proyecto de Maestría en Tecnologías Limpias</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
