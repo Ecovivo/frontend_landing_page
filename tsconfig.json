@@ -3,7 +3,23 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "paths": {
+      "@/*": ["src/*"],
+      "@uis/*": ["src/uis/*"],
+      "@data": ["src/data/"],
+      "@stores": ["src/stores/"],
+      "@stores/*": ["src/stores/*"],
+      "@assets/*": ["src/assets/*"],
+      "@models": ["src/models/"],
+      "@models/*": ["src/models/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@services": ["src/services/"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components/"]
+    }
   }
 }
