@@ -1,0 +1,30 @@
+---
+import Btn from "@uis/components/btn.astro";
+import type { BtnOptions } from "@models/uis/btn";
+import type { CtaOptions, Cta } from "@models/uis/cta";
+
+interface AloneCta extends CtaOptions, Cta {}
+const { title, description, pallette, theme } = Astro.props;
+const { primary_action, secondary_action } = Astro.props;
+const actions: BtnOptions = { theme, pallette, size: "lg" };
+---
+
+<div class="container mx-auto px-6">
+  <h2
+    class={`text-section text-${theme}-${pallette} mb-4 text-center font-bold`}
+  >
+    {title}
+  </h2>
+  <p class={`text-inline-${pallette} mb-12 text-center text-xl`}>
+    {description}
+  </p>
+  <slot />
+  <div class="mt-12 text-center">
+    <div
+      class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+    >
+      <Btn label={primary_action} {...actions} />
+      <Btn label={secondary_action} type="outline" {...actions} />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+---
+import AloneCta from "@uis/components/blueprints/aloneCta.astro";
+import type { CtaOptions, Cta } from "@models/uis/cta";
+
+const Recommendations = {
+  title: "Lo que dicen nuestros usuarios",
+  description:
+    "Historias reales de colombianos que ya generan su propia energía",
+  primary_action: "Únete a nuestra comunidad",
+  secondary_action: "Comenta y valora",
+};
+const { title, description, primary_action, secondary_action } =
+  Recommendations;
+const Options: CtaOptions = { pallette: "light", theme: "primary" };
+const Alone: Cta = { title, description, primary_action, secondary_action };
+---
+
+<section class="bg-block-light py-32">
+  <AloneCta {...Alone} {...Options}>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <!-- Testimonio Sofia -->
+      <div class="bg-block-card rounded-xl p-6 shadow-lg">
+        <div class="mb-4 flex items-center">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-pink-100 text-2xl"
+          >
+            👩
+          </div>
+          <div class="ml-3">
+            <h4 class="text-primary-card font-bold">María Elena Rodríguez</h4>
+            <p class="text-inline-card text-sm">
+              Madre de familia - Villavicencio, Meta
+            </p>
+          </div>
+        </div>
+        <p class="text-inline-card mb-4 italic">
+          "En solo 3 meses ya estoy ahorrando $280,000 en mi factura de luz. La
+          app me explicó todo tan fácil que hasta mi esposo se sorprendió..."
+        </p>
+        <div class="flex items-center justify-between">
+          <div class="text-warning-card">⭐⭐⭐⭐⭐</div>
+          <div class="bg-success-card/10 rounded-full px-3 py-1">
+            <span class="text-success-card text-sm font-bold"
+              >Ahorro: $280,000/mes</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio Santiago -->
+      <div class="bg-block-card rounded-xl p-6 shadow-lg">
+        <div class="mb-4 flex items-center">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-2xl"
+          >
+            👨
+          </div>
+          <div class="ml-3">
+            <h4 class="text-warning-card font-bold">Carlos Andrés Méndez</h4>
+            <p class="text-inline-card text-sm">Contador - Paipa, Boyacá</p>
+          </div>
+        </div>
+        <p class="text-inline-card mb-4 italic">
+          "Revisé los cálculos tres veces antes de decidirme. La precisión es
+          impresionante: los números coincidieron exactamente con mi factura
+          real..."
+        </p>
+        <div class="flex items-center justify-between">
+          <div class="text-warining-card">⭐⭐⭐⭐⭐</div>
+          <div class="bg-primary-card/10 rounded-full px-3 py-1">
+            <span class="text-primary-card text-sm font-bold"
+              >ROI: 4.2 años</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio Matías -->
+      <div class="bg-block-card rounded-xl p-6 shadow-lg">
+        <div class="mb-4 flex items-center">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 text-2xl"
+          >
+            👨
+          </div>
+          <div class="ml-3">
+            <h4 class="text-danger-card font-bold">Diego Alejandro Torres</h4>
+            <p class="text-inline-card text-sm">Desarrollador - Bogotá D.C</p>
+          </div>
+        </div>
+        <p class="text-inline-card mb-4 italic">
+          "Me encanta que sea código abierto. Ya contribuí con mejoras en GitHub
+          y veo el potencial enorme para expandirse por Latinoamérica..."
+        </p>
+        <div class="flex items-center justify-between">
+          <div class="text-warning-card">⭐⭐⭐⭐⭐</div>
+          <div class="bg-block-dark/10 rounded-full px-3 py-1">
+            <span class="text-block-dark text-sm font-bold"
+              >Contribuidor GitHub</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio Luciana -->
+      <div class="bg-block-card rounded-xl p-6 shadow-lg">
+        <div class="mb-4 flex items-center">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-2xl"
+          >
+            👩
+          </div>
+          <div class="ml-3">
+            <h4 class="text-success-card font-bold">Ana Lucía Vásquez</h4>
+            <p class="text-inline-card text-sm">
+              Líder comunitaria - Barranquillas
+            </p>
+          </div>
+        </div>
+        <p class="text-inline-card mb-4 italic">
+          "El equipo nos acompañó todo el proceso. Conectaron nuestra comunidad
+          con proveedores confiables y ahora 15 familias tenemos paneles
+          solares..."
+        </p>
+        <div class="flex items-center justify-between">
+          <div class="text-warning-card">⭐⭐⭐⭐⭐</div>
+          <div class="bg-warning-card/10 rounded-full px-3 py-1">
+            <span class="text-warning-card text-sm font-bold">15 familias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </AloneCta>
+</section>

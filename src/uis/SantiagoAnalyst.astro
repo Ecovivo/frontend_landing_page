@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import phone from "@assets/phones.png";
+import Btn from "@uis/components/btn.astro";
+
+const Analyst = {
+  title: "Datos precisos para decisiones informadas",
+  description:
+    "Toma decisiones inteligentes basadas en datos reales. Nuestra app utiliza información técnica actualizada y precios del mercado local para darte proyecciones confiables de retorno de inversión.",
+  primary_action: "Ver análisis completo",
+  secondary_action: "Descargar datos técnicos",
+  additional_text: "🎯 Precisión 95%+ en estimaciones de costos",
+  items: [
+    {
+      icon: "📊",
+      text: "Análisis técnico completo: Cálculos de dimensionamiento certificados",
+    },
+    {
+      icon: "💹",
+      text: "ROI transparente: Tiempo real de recuperación de inversión",
+    },
+    {
+      icon: "🔍",
+      text: "Comparativas detalladas: Precios verificados de múltiples proveedores",
+    },
+  ],
+};
+const { title, description, items } = Analyst;
+const { primary_action, secondary_action, additional_text } = Analyst;
+---
+
+<section class="bg-block-light py-16">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center lg:flex-row">
+      <div class="flex lg:w-1/2">
+        <Image
+          src={phone}
+          alt="A bird sitting on a nest of eggs."
+          class="h-screen w-5/7"
+        />
+      </div>
+
+      <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+        <h2 class="text-section text-primary-light mb-4 text-center font-bold">
+          {title}
+        </h2>
+        <p class="text-inline-light mb-6 text-xl">
+          {description}
+        </p>
+
+        <div class="mb-8 space-y-4">
+          {
+            items.map(({ icon, text }) => {
+              return (
+                <div class="flex items-center space-x-3">
+                  <span class="text-xl">{icon}</span>
+                  <span class="text-success-light font-medium">{text}</span>
+                </div>
+              );
+            })
+          }
+        </div>
+
+        <div
+          class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+        >
+          <Btn label={primary_action} pallette="light" />
+          <Btn label={secondary_action} pallette="light" type="outline" />
+        </div>
+
+        <div class="bg-success-light/10 inline-block rounded-4xl p-4">
+          <span class="text-success-light font-bold">{additional_text}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

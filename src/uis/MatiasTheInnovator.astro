@@ -1,0 +1,129 @@
+---
+import Btn from "@uis/components/btn.astro";
+
+const Collaborative = {
+  title: "Tecnología open source para el futuro",
+  description:
+    "Sé parte de la revolución energética con tecnología transparente y colaborativa. Código abierto que puedes auditar, modificar y mejorar, construyendo juntos el futuro de la energía solar en Colombia.",
+  primary_action: "Explorar código en GitHub",
+  secondary_action: "Contribuir al proyecto",
+  additional_text: "🎓 Proyecto académico convertido en solución real",
+  items: [
+    {
+      icon: "🔓",
+      text: "100% código abierto: Transparencia total, sin cajas negras",
+    },
+    {
+      icon: "🚀",
+      text: "Innovación continua: Actualizaciones constantes de la comunidad",
+    },
+    {
+      icon: "🌍",
+      text: "Impacto escalable: Tecnología replicable para toda Latinoamérica",
+    },
+  ],
+};
+const { title, description, items } = Collaborative;
+const { primary_action, secondary_action, additional_text } = Collaborative;
+---
+
+<section class="bg-block-card py-64">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center lg:flex-row">
+      <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+        <h2 class="text-section text-success-card mb-4 text-center font-bold">
+          {title}
+        </h2>
+        <p class="text-inline-card mb-6 text-xl">
+          {description}
+        </p>
+
+        <div class="mb-8 space-y-4">
+          {
+            items.map(({ text, icon }) => {
+              return (
+                <div class="flex items-center space-x-3">
+                  <span class="text-warning-card text-xl">{icon}</span>
+                  <span class="text-warning-card font-medium">{text}</span>
+                </div>
+              );
+            })
+          }
+        </div>
+
+        <div
+          class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+        >
+          <Btn label={primary_action} theme="success" />
+          <Btn label={secondary_action} theme="success" type="outline" />
+        </div>
+
+        <div class="mb-4 flex flex-wrap gap-2">
+          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+            >PHP</span
+          >
+          <span
+            class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
+            >Python</span
+          >
+          <span
+            class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
+            >JavaScript</span
+          >
+          <span class="rounded-full bg-red-100 px-3 py-1 text-sm text-red-800"
+            >HTML</span
+          >
+          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+            >CSS</span
+          >
+          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+            >MySQL</span
+          >
+          <span
+            class="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-800"
+            >Kotlin</span
+          >
+          <span
+            class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800"
+            >Android</span
+          >
+        </div>
+
+        <div class="bg-warning-card/10 inline-block rounded-4xl p-4">
+          <span class="text-warning-card font-bold">{additional_text}</span>
+        </div>
+      </div>
+
+      <div class="lg:w-1/2">
+        <div
+          class="bg-block-dark text-inline-dark mx-auto max-w-md rounded-xl p-6 shadow-lg"
+        >
+          <h3 class="mb-4 text-center text-lg font-bold">GitHub Repository</h3>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-sm">⭐ Stars</span>
+              <span class="font-bold">156</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm">🍴 Forks</span>
+              <span class="font-bold">23</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-sm">👥 Contributors</span>
+              <span class="font-bold">8</span>
+            </div>
+            <div class="rounded bg-gray-800 p-3 font-mono text-sm">
+              <div class="text-green-400">$ git clone energiapp</div>
+              <div class="text-gray-400">Cloning repository...</div>
+              <div class="text-blue-400">✓ Ready to contribute!</div>
+            </div>
+            <div class="text-center">
+              <div class="text-sm text-gray-400">Último commit</div>
+              <div class="font-medium">hace 2 días</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

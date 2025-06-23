@@ -1,0 +1,73 @@
+---
+const Steps = {
+  title: "Guía Paso a Paso",
+  banner: {
+    title: "💬 Chat de Soporte",
+    description:
+      "¿Dudas sobre componentes? Nuestro equipo te ayuda en tiempo real",
+  },
+  items: [
+    {
+      id: 1,
+      text: "Calcular demanda energética",
+      icon: "✓",
+      type: "success",
+    },
+    {
+      id: 2,
+      text: "Dimensionar sistema",
+      icon: "✓",
+      type: "success",
+    },
+    {
+      id: 3,
+      text: "Seleccionar componentes",
+      icon: "▶",
+      type: "primary",
+    },
+    {
+      id: 4,
+      text: "Encontrar instalador",
+      icon: "",
+      type: "dark",
+    },
+  ],
+};
+const { title, banner, items } = Steps;
+---
+
+<div class="bg-block-card mx-auto max-w-md rounded-xl p-6 shadow-lg">
+  <h3 class="text-inline-card mb-4 text-center text-lg font-bold">
+    {title}
+  </h3>
+  <div class="space-y-4">
+    {
+      items.map(({ id, text, icon, type }) => {
+        const clazz = type === "dark" ? "block-dark/10" : `${type}-card`;
+        const claxx = type === "dark" ? "block-dark" : `${type}-card`;
+        return (
+          <div
+            class={`bg-${claxx}/10 flex items-center space-x-3 rounded-sm p-3`}
+          >
+            <div
+              class={`bg-${clazz} text-block-card flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold`}
+            >
+              {id}
+            </div>
+            <span class={`text-block-dark font-medium`}>{text}</span>
+            {icon && <span class={`text-${claxx}`}>{icon}</span>}
+          </div>
+        );
+      })
+    }
+
+    <div class="bg-primary-card/10 rounded-sm p-4">
+      <div class="text-primary-card mb-2 text-sm font-medium">
+        {banner.title}
+      </div>
+      <div class="text-inline-card text-xs">
+        {banner.description}
+      </div>
+    </div>
+  </div>
+</div>

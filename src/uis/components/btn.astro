@@ -1,0 +1,36 @@
+---
+import type { BtnOptions } from "@models/uis/btn";
+
+interface Props extends BtnOptions {
+  label: string;
+}
+const {
+  label,
+  type = "classic",
+  size = "md",
+  theme = "primary",
+  pallette = "card",
+} = Astro.props;
+const sizing = size === "md" ? "px-3 py-3" : "px-8 py-4";
+const sizingOutline =
+  size === "md" ? "px-3 py-3 border-1" : "px-8 py-4 border-2";
+---
+
+{
+  type === "classic" && (
+    <button
+      class={`bg-${theme}-${pallette} text-inline-dark hover:bg-${theme}-${pallette}/10 hover:text-${theme}-${pallette} rounded-sm ${sizing} text-${size} font-medium transition-colors`}
+    >
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && (
+    <button
+      class={`border-${theme}-${pallette} text-${theme}-${pallette} hover:bg-${theme}-${pallette} hover:border-${theme}-${pallette} hover:text-inline-dark rounded-sm ${sizingOutline} text-${size} font-medium transition-colors`}
+    >
+      {label}
+    </button>
+  )
+}

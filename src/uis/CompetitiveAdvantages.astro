@@ -1,0 +1,242 @@
+---
+import AloneCta from "@uis/components/blueprints/aloneCta.astro";
+import type { CtaOptions, Cta } from "@models/uis/cta";
+
+const Competitive = {
+  title: "¿Por qué elegir nuestra app?",
+  description:
+    "Comparamos con las principales herramientas del mercado para que veas la diferencia",
+  primary_action: "Probar gratis ahora",
+  secondary_action: "Ver todas las ventajas",
+  banner: {
+    title: "💰 AHORRA $1,200+ USD AL AÑO",
+    description:
+      "Somos la única solución que combina lo mejor de ambos mundos: *gratuita Y fácil de usar*. Democratizamos el acceso real a la energía solar.",
+  },
+  table: {
+    header: [
+      { label: "Característica", type: "primary" },
+      { label: "Competencia Profesional", type: "primary" },
+      { label: "Nuestra App", type: "success" },
+      { label: "Herramientas Libres", type: "primary" },
+    ],
+    body: [
+      [
+        {
+          label: "💰 Costo anual",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "$1,200+ USD",
+          block: "",
+          inline: "danger",
+        },
+        {
+          label: "GRATIS",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Gratis",
+          block: "",
+          inline: "success",
+        },
+      ],
+      [
+        {
+          label: "📱 Plataforma",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "Solo computadora",
+          block: "",
+          inline: "inline",
+        },
+        {
+          label: "App móvil",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Solo computadora",
+          block: "",
+          inline: "inline",
+        },
+      ],
+      [
+        {
+          label: "🇨🇴 Info local",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "Datos genéricos globales",
+          block: "",
+          inline: "inline",
+        },
+        {
+          label: "Precios Colombia",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Sin datos locales",
+          block: "",
+          inline: "danger",
+        },
+      ],
+      [
+        {
+          label: "🎓 Facilidad",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "Requiere expertise",
+          block: "",
+          inline: "danger",
+        },
+        {
+          label: "Sin conocimientos técnicos",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Muy complejo para usuarios comunes",
+          block: "",
+          inline: "danger",
+        },
+      ],
+      [
+        {
+          label: "🔓 Código",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "Propietario",
+          block: "",
+          inline: "danger",
+        },
+        {
+          label: "100% abierto",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Código abierto",
+          block: "",
+          inline: "success",
+        },
+      ],
+      [
+        {
+          label: "⚡ Velocidad",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "Horas de configuración",
+          block: "",
+          inline: "inline",
+        },
+        {
+          label: "Resultados en minutos",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Días de aprendizaje",
+          block: "",
+          inline: "danger",
+        },
+      ],
+      [
+        {
+          label: "🛠️ Soporte",
+          block: "primary-dark/10",
+          inline: "primary",
+        },
+        {
+          label: "Solo documentación",
+          block: "",
+          inline: "inline",
+        },
+        {
+          label: "Comunidad + equipo",
+          block: "success-dark/15",
+          inline: "success",
+        },
+        {
+          label: "Solo documentación técnica",
+          block: "",
+          inline: "danger",
+        },
+      ],
+    ],
+  },
+};
+const { title, description, table, banner, primary_action, secondary_action } =
+  Competitive;
+const Options: CtaOptions = { pallette: "card", theme: "success" };
+const Alone: Cta = { title, description, primary_action, secondary_action };
+---
+
+<section class="bg-block-card py-16">
+  <AloneCta {...Alone} {...Options}>
+    <div class="overflow-x-auto">
+      <table
+        class="bg-primary-dark/10 w-full overflow-hidden rounded-sm font-bold shadow-lg"
+      >
+        <thead class="text-block-light">
+          {
+            table.header.map(({ label, type }, index) => {
+              const align = index === 0 ? "text-left" : "text-center";
+              return (
+                <th class={`${align} bg-${type}-card px-6 py-4`}>{label}</th>
+              );
+            })
+          }
+        </thead>
+        <tbody class="divide-primary-dark/10 divide-y">
+          <tr>
+            {
+              table.body.map((row) => {
+                return (
+                  <tr>
+                    {row.map(({ label, block, inline }, index) => {
+                      const bg = block ? `bg-${block}` : "";
+                      const align = index === 0 ? "text-left" : "text-center";
+                      return (
+                        <td
+                          class={`${bg} text-${inline}-card ${align} px-6 py-4`}
+                        >
+                          {label}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })
+            }
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <div
+        class="bg-primary-card/10 border-primary-card mb-6 inline-block rounded-lg border p-6"
+      >
+        <h3 class="text-primary-card mb-2 text-2xl font-bold">
+          {banner.title}
+        </h3>
+        <p class="text-inline-card">
+          {banner.description}
+        </p>
+      </div>
+    </div>
+  </AloneCta>
+</section>

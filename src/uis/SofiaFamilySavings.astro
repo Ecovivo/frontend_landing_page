@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import phone from "@assets/phones.png";
+import Btn from "@uis/components/btn.astro";
+
+const Savings = {
+  title: "Ahorro inmediato para tu familia",
+  description:
+    "Ve resultados desde el primer mes. Nuestra app te muestra exactamente cuánto puedes ahorrar en tu factura eléctrica y cómo lograrlo sin complicaciones técnicas.",
+  primary_action: "Calcular mi ahorro ahora",
+  secondary_action: "Ver ejemplo real",
+  additional_text: "💰 Familias ahorran promedio $245,000 mensual",
+  items: [
+    {
+      icon: "✅",
+      text: "Cálculo instantáneo: Descubre tu ahorro en menos de 5 minutos",
+    },
+    {
+      icon: "✅",
+      text: "Componentes locales: Precios reales del mercado colombiano",
+    },
+    {
+      icon: "✅",
+      text: "Instalación simple: Guías paso a paso que cualquiera puede seguir",
+    },
+  ],
+};
+const { title, description, items } = Savings;
+const { primary_action, secondary_action, additional_text } = Savings;
+---
+
+<section class="bg-block-card py-16">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center lg:flex-row">
+      <div class="lg:w-1/2">
+        <Image
+          src={phone}
+          alt="A bird sitting on a nest of eggs."
+          class="h-screen w-5/7"
+        />
+      </div>
+      <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
+        <h2 class="text-section text-primary-card mb-4 text-center font-bold">
+          {title}
+        </h2>
+        <p class="text-inline-card mb-6 text-xl">
+          {description}
+        </p>
+
+        <div class="mb-8 space-y-4">
+          {
+            items.map(({ icon, text }) => {
+              return (
+                <div class="text-success-card flex items-center space-x-3">
+                  <span class="text-xl">{icon}</span>
+                  <span class="font-medium">{text}</span>
+                </div>
+              );
+            })
+          }
+        </div>
+
+        <div
+          class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+        >
+          <Btn label={primary_action} />
+          <Btn label={secondary_action} type="outline" />
+        </div>
+
+        <div class="bg-success-card/10 inline-block rounded-4xl p-4">
+          <span class="text-success-card font-bold">{additional_text}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

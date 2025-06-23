@@ -1,6 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import phone from "@assets/phones.png";
+import Btn from "@uis/components/btn.astro";
+
+const hero = {
+  title: "Reduce tu factura eléctrica con energía solar",
+  subtitle:
+    "Únete a miles de colombianos que ya generan su propia energía limpia. Calcula, diseña e instala tu sistema solar desde tu celular.",
+  primary_action: "Descargar App Gratis",
+  secondary_action: "Involúcrate",
+  items: [
+    {
+      icon: "📱",
+      text: "100% Gratis",
+    },
+    {
+      icon: "🇨🇴",
+      text: "Hecho en Colombia",
+    },
+    {
+      icon: "💰",
+      text: "Ahorra hasta 70%",
+    },
+  ],
+};
+
+const { title, subtitle, primary_action, secondary_action, items } = hero;
 ---
 
 <section id="inicio" class="bg-block-dark">
@@ -8,43 +33,32 @@ import phone from "@assets/phones.png";
     <div class="flex flex-col items-center lg:flex-row">
       <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
         <h1 class="text-hero text-primary-dark mb-6 leading-tight font-bold">
-          Reduce tu factura eléctrica con energía solar
+          {title}
         </h1>
         <p class="text-inline-dark mb-8 text-xl leading-relaxed">
-          Únete a miles de colombianos que ya generan su propia energía limpia.
-          Calcula, diseña e instala tu sistema solar desde tu celular.
+          {subtitle}
         </p>
 
         <div
           class="mb-8 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
         >
-          <button
-            class="bg-primary-card text-inline-dark hover:bg-primary-card/10 hover:text-primary-card rounded-sm px-8 py-4 text-lg font-medium transition-colors"
-          >
-            Descargar App Gratis
-          </button>
-          <button
-            class="border-primary-card text-primary-card hover:bg-primary-card hover:border-primary-card hover:text-inline-dark rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors"
-          >
-            Involúcrate
-          </button>
+          <Btn label={primary_action} size="lg" />
+          <Btn label={secondary_action} type="outline" size="lg" />
         </div>
 
         <div
           class="text-inline-dark flex flex-wrap items-center space-x-6 text-sm"
         >
-          <div class="flex items-center space-x-2">
-            <span class="text-2xl">📱</span>
-            <span class="font-medium">100% Gratis</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <span class="text-2xl">🇨🇴</span>
-            <span class="font-medium">Hecho en Colombia</span>
-          </div>
-          <div class="flex items-center space-x-2">
-            <span class="text-2xl">💰</span>
-            <span class="font-medium">Ahorra hasta 70%</span>
-          </div>
+          {
+            items.map(({ icon, text }) => {
+              return (
+                <div class="flex items-center space-x-2">
+                  <span class="text-2xl">{icon}</span>
+                  <span class="font-medium">{text}</span>
+                </div>
+              );
+            })
+          }
         </div>
       </div>
 
