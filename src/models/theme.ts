@@ -1,7 +1,9 @@
-const PartTheme = ["success", "warning", "danger", "inline", "primary"];
-const Themes = [...PartTheme, "block"] as const;
+const Traffic = ["warning", "danger"];
+const BasicThemes = ["success", "primary"] as const;
+const Themes = [...BasicThemes, ...Traffic, "block", "inline"] as const;
 
 export type Theme = (typeof Themes)[number];
+export type BasicTheme = (typeof BasicThemes)[number];
 
 const Sizes = ["sm", "md", "lg"] as const;
 export type Size = (typeof Sizes)[number];

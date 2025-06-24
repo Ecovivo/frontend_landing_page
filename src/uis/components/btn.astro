@@ -1,35 +1,205 @@
 ---
-import type { BtnOptions } from "@models/uis/btn";
+import type { Btn, BtnOptions } from "@models/uis/btn";
 
-interface Props extends BtnOptions {
-  label: string;
-}
-const {
-  label,
-  type = "classic",
-  size = "md",
-  theme = "primary",
-  pallette = "card",
-} = Astro.props;
-const sizing = size === "md" ? "px-3 py-3" : "px-8 py-4";
-const sizingOutline =
-  size === "md" ? "px-3 py-3 border-1" : "px-8 py-4 border-2";
+interface Props extends Btn, BtnOptions {}
+const { theme, pallette, label, type, size } = Astro.props;
+const isMdPrimaryL =
+  size === "md" && theme === "primary" && pallette === "light";
+const isLgPrimaryL =
+  size === "lg" && theme === "primary" && pallette === "light";
+const isMdSuccessL =
+  size === "md" && theme === "success" && pallette === "light";
+const isLgSuccessL =
+  size === "lg" && theme === "success" && pallette === "light";
+
+const isMdPrimaryC =
+  size === "md" && theme === "primary" && pallette === "card";
+const isLgPrimaryC =
+  size === "lg" && theme === "primary" && pallette === "card";
+const isMdSuccessC =
+  size === "md" && theme === "success" && pallette === "card";
+const isLgSuccessC =
+  size === "lg" && theme === "success" && pallette === "card";
+
+const isMdPrimaryD =
+  size === "md" && theme === "primary" && pallette === "dark";
+const isLgPrimaryD =
+  size === "lg" && theme === "primary" && pallette === "dark";
+const isMdSuccessD =
+  size === "md" && theme === "success" && pallette === "dark";
+const isLgSuccessD =
+  size === "lg" && theme === "success" && pallette === "dark";
 ---
 
 {
-  type === "classic" && (
-    <button
-      class={`bg-${theme}-${pallette} text-inline-dark hover:bg-${theme}-${pallette}/10 hover:text-${theme}-${pallette} rounded-sm ${sizing} text-${size} font-medium transition-colors`}
-    >
+  type === "classic" && isMdPrimaryL && (
+    <button class="bg-primary-light text-inline-dark hover:bg-primary-light/10 hover:text-primary-light rounded-sm px-3 py-3 text-lg font-medium transition-colors">
       {label}
     </button>
   )
 }
 {
-  type === "outline" && (
-    <button
-      class={`border-${theme}-${pallette} text-${theme}-${pallette} hover:bg-${theme}-${pallette} hover:border-${theme}-${pallette} hover:text-inline-dark rounded-sm ${sizingOutline} text-${size} font-medium transition-colors`}
-    >
+  type === "classic" && isLgPrimaryL && (
+    <button class="bg-primary-light text-inline-dark hover:bg-primary-light/10 hover:text-primary-light rounded-sm px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isMdSuccessL && (
+    <button class="bg-success-light text-inline-dark hover:bg-success-light/10 hover:text-success-light rounded-sm px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isLgSuccessL && (
+    <button class="bg-success-light text-inline-dark hover:bg-success-light/10 hover:text-success-light rounded-sm px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+
+{
+  type === "classic" && isMdPrimaryC && (
+    <button class="bg-primary-card text-inline-dark hover:bg-primary-card/10 hover:text-primary-card rounded-sm px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isLgPrimaryC && (
+    <button class="bg-primary-card text-inline-dark hover:bg-primary-card/10 hover:text-primary-card rounded-sm px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isMdSuccessC && (
+    <button class="bg-success-card text-inline-dark hover:bg-success-card/10 hover:text-success-card rounded-sm px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isLgSuccessC && (
+    <button class="bg-success-card text-inline-dark hover:bg-success-card/10 hover:text-success-card rounded-sm px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+
+{
+  type === "outline" && isMdPrimaryL && (
+    <button class="border-primary-light text-primary-light hover:bg-primary-light hover:border-primary-light hover:text-inline-dark rounded-sm border-1 px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isLgPrimaryL && (
+    <button class="border-primary-light text-primary-light hover:bg-primary-light hover:border-primary-light hover:text-inline-dark rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isMdSuccessL && (
+    <button class="border-success-light text-success-light hover:bg-success-light hover:border-success-light hover:text-inline-dark rounded-sm border-1 px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isLgSuccessL && (
+    <button class="border-success-light text-success-light hover:bg-success-light hover:border-success-light hover:text-inline-dark rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+
+{
+  type === "outline" && isMdPrimaryC && (
+    <button class="border-primary-card text-primary-card hover:bg-primary-card hover:border-primary-card hover:text-inline-dark rounded-sm border-1 px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isLgPrimaryC && (
+    <button class="border-primary-card text-primary-card hover:bg-primary-card hover:border-primary-card hover:text-inline-dark rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isMdSuccessC && (
+    <button class="border-success-card text-success-card hover:bg-success-card hover:border-success-card hover:text-inline-dark rounded-sm border-1 px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isLgSuccessC && (
+    <button class="border-success-card text-success-card hover:bg-success-card hover:border-success-card hover:text-inline-dark rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+
+{
+  type === "outline" && isMdPrimaryD && (
+    <button class="border-primary-dark text-primary-dark hover:bg-primary-dark hover:border-primary-dark hover:text-inline-light rounded-sm border-1 px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isLgPrimaryD && (
+    <button class="border-primary-dark text-primary-dark hover:bg-primary-dark hover:border-primary-dark hover:text-inline-light rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isMdSuccessD && (
+    <button class="border-success-dark text-success-dark hover:bg-success-dark hover:border-success-dark hover:text-inline-light rounded-sm border-1 px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "outline" && isLgSuccessD && (
+    <button class="border-success-dark text-success-dark hover:bg-success-dark hover:border-success-dark hover:text-inline-light rounded-sm border-2 px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+
+{
+  type === "classic" && isMdPrimaryD && (
+    <button class="bg-primary-dark text-inline-light hover:bg-primary-dark/10 hover:text-primary-dark rounded-sm px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isLgPrimaryD && (
+    <button class="bg-primary-dark text-inline-light hover:bg-primary-dark/10 hover:text-primary-dark rounded-sm px-8 py-4 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isMdSuccessD && (
+    <button class="bg-success-dark text-inline-light hover:bg-success-dark/10 hover:text-success-dark rounded-sm px-3 py-3 text-lg font-medium transition-colors">
+      {label}
+    </button>
+  )
+}
+{
+  type === "classic" && isLgSuccessD && (
+    <button class="bg-success-dark text-inline-light hover:bg-success-dark/10 hover:text-success-dark rounded-sm px-8 py-4 text-lg font-medium transition-colors">
       {label}
     </button>
   )

@@ -1,150 +1,137 @@
 ---
+import AloneCta from "@uis/components/blueprints/aloneCta.astro";
+import type { CtaOptions, Cta } from "@models/uis/cta";
 
+const Us = {
+  title: "El equipo detrás de la revolución solar",
+  description:
+    "Un proyecto académico de la Universidad Santo Tomás que se convirtió en solución real para Colombia",
+  primary_action: "Conocer más del proyecto",
+  secondary_action: "Contactar al equipo",
+};
+const { title, description, primary_action, secondary_action } = Us;
+const Options: CtaOptions = { pallette: "light", theme: "success" };
+const Alone: Cta = { title, description, primary_action, secondary_action };
 ---
 
-<!-- NOSOTROS -->
-<section id="nosotros" class="bg-block-light py-16">
-  <div class="container mx-auto px-6">
-    <h2 class="text-section mb-4 text-center font-bold">
-      El equipo detrás de la revolución solar
-    </h2>
-    <p class="mb-12 text-center text-xl text-gray-600">
-      Un proyecto académico de la Universidad Santo Tomás que se convirtió en
-      solución real para Colombia
-    </p>
-
-    <!-- Respaldo Académico -->
-    <div class="mb-12 rounded-xl bg-white p-8 text-center shadow-lg">
-      <div class="mb-4 text-5xl">🎓</div>
-      <h3 class="text-primary-dark mb-4 text-2xl font-bold">
-        UNIVERSIDAD SANTO TOMÁS
-      </h3>
-      <p class="mb-4 text-lg font-medium text-gray-700">
-        Maestría en Tecnologías Limpias
-      </p>
-      <p class="mb-6 text-gray-600">
-        Programa enfocado en soluciones sostenibles para Colombia
-      </p>
-      <a
-        href="https://usantotomas.edu.co/maestria-en-tecnologias-limpia"
-        class="text-secondary hover:underline"
-      >
-        usantotomas.edu.co/maestria-en-tecnologias-limpia
-      </a>
-      <div class="bg-secondary/10 mt-6 rounded-lg p-4">
-        <p class="text-gray-700 italic">
-          "Este proyecto nació como una tesis de maestría y evolucionó hasta
-          convertirse en una herramienta que democratiza el acceso a la energía
-          solar en Colombia."
-        </p>
-      </div>
-    </div>
-
-    <!-- Equipo -->
+<section id="nosotros" class="bg-block-light py-32">
+  <AloneCta {...Alone} {...Options}>
     <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-      <!-- Magdiel -->
-      <div class="rounded-xl bg-white p-6 text-center shadow-lg">
-        <div
-          class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-blue-100 text-4xl"
-        >
-          👨‍💻
-        </div>
-        <h3 class="mb-2 text-xl font-bold">MAGDIEL MÁRQUEZ HERNÁNDEZ</h3>
-        <p class="text-secondary mb-4 font-medium">
-          Desarrollador Full Stack - Matemático
-        </p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li>
-            • <strong>+10 años de experiencia</strong> en desarrollo de software
-          </li>
-          <li>
-            • <strong>Especialidades:</strong> HTML, CSS, JavaScript, PHP, Python,
-            MySQL
-          </li>
-          <li>
-            • <strong>Pasión:</strong> Resolver problemas complejos con soluciones
-            simples
-          </li>
-        </ul>
-      </div>
-
-      <!-- Román -->
-      <div class="rounded-xl bg-white p-6 text-center shadow-lg">
+      <div class="bg-block-card rounded-xl p-6 text-center shadow-lg">
         <div
           class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-yellow-100 text-4xl"
         >
           ⚡
         </div>
-        <h3 class="mb-2 text-xl font-bold">ROMÁN FABIÁN PÉREZ FIGUEROA</h3>
-        <p class="text-warning mb-4 font-medium">Ingeniero Electricista</p>
-        <ul class="space-y-2 text-sm text-gray-600">
+        <h3 class="text-inline-card mb-2 text-xl font-bold">
+          ROMÁN FABIÁN PÉREZ FIGUEROA
+        </h3>
+        <p class="text-warning-card mb-4 font-medium">Ingeniero Electricista</p>
+        <ul class="text-inline-card space-y-2 text-sm">
           <li>
-            • <strong>Profesional Sénior</strong> en sector eléctrico colombiano
+            <strong>Experiencia:</strong> Gestión de infraestructura eléctrica.
           </li>
           <li>
-            • <strong>Especialista</strong> en proyectos energéticos y sistemas fotovoltaicos
+            <strong>Profesional Sénior:</strong> en sector eléctrico colombiano
           </li>
           <li>
-            • <strong>Experiencia:</strong> Gestión de infraestructura eléctrica
-            y energías renovables
+            <strong>Especialista:</strong> en proyectos energéticos y sistemas fotovoltaicos
           </li>
         </ul>
       </div>
 
-      <!-- Deiver -->
-      <div class="rounded-xl bg-white p-6 text-center shadow-lg">
+      <div class="bg-block-card rounded-xl p-6 text-center shadow-lg">
         <div
           class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-green-100 text-4xl"
         >
+          👨‍💻
+        </div>
+        <h3 class="text-inline-card mb-2 text-xl font-bold">
+          MAGDIEL MÁRQUEZ HERNÁNDEZ
+        </h3>
+        <p class="text-success-card mb-4 font-medium">
+          Desarrollador Full Stack - Matemático
+        </p>
+        <ul class="text-inline-card space-y-2 text-sm">
+          <li>
+            <strong>+10 años de experiencia</strong> en desarrollo de software
+          </li>
+          <li>
+            <strong>Especialidades:</strong> HTML, CSS, JavaScript, PHP, Python,
+            MySQL
+          </li>
+          <li>
+            <strong>Pasión:</strong> Resolver problemas complejos con soluciones
+            simples
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-block-card rounded-xl p-6 text-center shadow-lg">
+        <div
+          class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-blue-100 text-4xl"
+        >
           🌱
         </div>
-        <h3 class="mb-2 text-xl font-bold">DEIVER SAAVEDRA COTRINA</h3>
-        <p class="text-primary mb-4 font-medium">
+        <h3 class="text-inline-card mb-2 text-xl font-bold">
+          DEIVER SAAVEDRA COTRINA
+        </h3>
+        <p class="text-primary-card mb-4 font-medium">
           M.Sc. en Energías Renovables (Tutor académico)
         </p>
-        <ul class="space-y-2 text-sm text-gray-600">
+        <ul class="text-inline-card space-y-2 text-sm">
           <li>
-            • <strong>Administrador Ambiental</strong> con especialización en evaluación
-            de proyectos
+            <strong>Administrador Ambiental</strong> en evaluación de proyectos
           </li>
           <li>
-            • <strong>Experto</strong> en energías renovables y gestión integral
-            de residuos
+            <strong>Experiencia:</strong> Sectores construcción, energético y minero
           </li>
           <li>
-            • <strong>Experiencia:</strong> Sectores construcción, industria petrolera,
-            energético y minero
+            <strong>Experto</strong> en energías renovables y gestión integral de
+            residuos
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- Misión -->
-    <div class="bg-primary/5 border-primary rounded-xl border p-8 text-center">
-      <h3 class="text-primary-dark mb-4 text-2xl font-bold">
-        🎯 NUESTRA MISIÓN
-      </h3>
-      <p class="text-lg leading-relaxed text-gray-700 italic">
-        "Hacer que la energía solar sea accesible, comprensible y factible para
-        todos los colombianos, sin importar su nivel técnico o económico."
-      </p>
-    </div>
-
-    <div class="mt-8 text-center">
+    <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="bg-block-card rounded-xl p-8 text-center shadow-lg">
+        <div class="mb-4 text-5xl">🎓</div>
+        <h3 class="text-primary-card mb-2 text-2xl font-bold">
+          UNIVERSIDAD SANTO TOMÁS
+        </h3>
+        <p class="text-inline-card mb-2 text-lg font-medium">
+          Maestría en Tecnologías Limpias
+        </p>
+        <p class="text-inline-card mb-4">
+          Programa enfocado en soluciones sostenibles para Colombia
+        </p>
+        <a
+          href="https://usantotomas.edu.co/maestria-en-tecnologias-limpia"
+          class="text-primary-card hover:underline"
+        >
+          usantotomas.edu.co/maestria-en-tecnologias-limpia
+        </a>
+      </div>
       <div
-        class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+        class="bg-success-card/5 border-success-card rounded-xl border p-8 text-center"
       >
-        <button
-          class="bg-secondary rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-blue-600"
-        >
-          Conocer más del proyecto
-        </button>
-        <button
-          class="border-secondary text-secondary hover:bg-secondary rounded-lg border px-8 py-4 text-lg font-medium transition-colors hover:text-white"
-        >
-          Contactar al equipo
-        </button>
+        <h3 class="text-primary-card mb-4 text-2xl font-bold">
+          🎯 NUESTRA MISIÓN
+        </h3>
+        <p class="text-inline-card text-lg leading-relaxed italic">
+          "Hacer que la energía solar sea accesible, comprensible y factible
+          para todos los colombianos, sin importar su nivel técnico o
+          económico."
+        </p>
+        <div class="bg-block-card mt-6 rounded-lg p-4">
+          <p class="text-success-card italic">
+            "Este proyecto nació como una tesis de maestría y evolucionó hasta
+            convertirse en una herramienta que democratiza el acceso a la
+            energía solar en Colombia."
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </AloneCta>
 </section>

@@ -1,0 +1,40 @@
+---
+import type { DualList } from "@models/uis/list";
+
+interface Props extends DualList {}
+const { icon, text, theme, pallette } = Astro.props;
+---
+
+{
+  theme === "success" && pallette === "card" && (
+    <div class="text-success-card flex items-center space-x-3">
+      <span class="text-xl">{icon}</span>
+      <span class="font-medium">{text}</span>
+    </div>
+  )
+}
+{
+  theme === "success" && pallette === "light" && (
+    <div class="text-success-light flex items-center space-x-3">
+      <span class="text-xl">{icon}</span>
+      <span class="font-medium">{text}</span>
+    </div>
+  )
+}
+<!-- primary -->
+{
+  theme === "primary" && pallette === "card" && (
+    <div class="text-primary-card flex items-center space-x-3">
+      <span class="text-xl">{icon}</span>
+      <span class="font-medium">{text}</span>
+    </div>
+  )
+}
+{
+  theme === "primary" && pallette === "light" && (
+    <div class="text-primary-light flex items-center space-x-3">
+      <span class="text-xl">{icon}</span>
+      <span class="font-medium">{text}</span>
+    </div>
+  )
+}

@@ -1,0 +1,36 @@
+---
+import type { DualPill } from "@models/uis/pill";
+
+interface Props extends DualPill {}
+const { additional_text, theme, pallette } = Astro.props;
+---
+
+{
+  theme === "success" && pallette === "card" && (
+    <div class="bg-success-card/10 inline-block rounded-4xl p-4">
+      <span class="text-success-card font-bold">{additional_text}</span>
+    </div>
+  )
+}
+{
+  theme === "success" && pallette === "light" && (
+    <div class="bg-success-light/10 inline-block rounded-4xl p-4">
+      <span class="text-success-light font-bold">{additional_text}</span>
+    </div>
+  )
+}
+<!-- primary -->
+{
+  theme === "primary" && pallette === "card" && (
+    <div class="bg-primary-card/10 inline-block rounded-4xl p-4">
+      <span class="text-primary-card font-bold">{additional_text}</span>
+    </div>
+  )
+}
+{
+  theme === "primary" && pallette === "light" && (
+    <div class="bg-primary-light/10 inline-block rounded-4xl p-4">
+      <span class="text-primary-light font-bold">{additional_text}</span>
+    </div>
+  )
+}

@@ -1,7 +1,7 @@
 ---
-import Btn from "@uis/components/btn.astro";
+import DualCta from "@uis/components/blueprints/dualCta.astro";
 
-const Collaborative = {
+const Innovator = {
   title: "Tecnología open source para el futuro",
   description:
     "Sé parte de la revolución energética con tecnología transparente y colaborativa. Código abierto que puedes auditar, modificar y mejorar, construyendo juntos el futuro de la energía solar en Colombia.",
@@ -23,75 +23,47 @@ const Collaborative = {
     },
   ],
 };
-const { title, description, items } = Collaborative;
-const { primary_action, secondary_action, additional_text } = Collaborative;
 ---
 
 <section class="bg-block-card py-64">
   <div class="container mx-auto px-6">
     <div class="flex flex-col items-center lg:flex-row">
       <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
-        <h2 class="text-section text-success-card mb-4 text-center font-bold">
-          {title}
-        </h2>
-        <p class="text-inline-card mb-6 text-xl">
-          {description}
-        </p>
-
-        <div class="mb-8 space-y-4">
-          {
-            items.map(({ text, icon }) => {
-              return (
-                <div class="flex items-center space-x-3">
-                  <span class="text-warning-card text-xl">{icon}</span>
-                  <span class="text-warning-card font-medium">{text}</span>
-                </div>
-              );
-            })
-          }
-        </div>
-
-        <div
-          class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-        >
-          <Btn label={primary_action} theme="success" />
-          <Btn label={secondary_action} theme="success" type="outline" />
-        </div>
-
-        <div class="mb-4 flex flex-wrap gap-2">
-          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
-            >PHP</span
-          >
-          <span
-            class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
-            >Python</span
-          >
-          <span
-            class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
-            >JavaScript</span
-          >
-          <span class="rounded-full bg-red-100 px-3 py-1 text-sm text-red-800"
-            >HTML</span
-          >
-          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
-            >CSS</span
-          >
-          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
-            >MySQL</span
-          >
-          <span
-            class="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-800"
-            >Kotlin</span
-          >
-          <span
-            class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800"
-            >Android</span
-          >
-        </div>
-
-        <div class="bg-warning-card/10 inline-block rounded-4xl p-4">
-          <span class="text-warning-card font-bold">{additional_text}</span>
-        </div>
+        <DualCta {...Innovator} theme="success" pallette="card">
+          <div class="mb-4 flex flex-wrap gap-2">
+            <span
+              class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+              >PHP</span
+            >
+            <span
+              class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
+              >Python</span
+            >
+            <span
+              class="rounded-full bg-yellow-100 px-3 py-1 text-sm text-yellow-800"
+              >JavaScript</span
+            >
+            <span class="rounded-full bg-red-100 px-3 py-1 text-sm text-red-800"
+              >HTML</span
+            >
+            <span
+              class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+              >CSS</span
+            >
+            <span
+              class="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800"
+              >MySQL</span
+            >
+            <span
+              class="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-800"
+              >Kotlin</span
+            >
+            <span
+              class="rounded-full bg-green-100 px-3 py-1 text-sm text-green-800"
+              >Android</span
+            >
+          </div>
+        </DualCta>
       </div>
 
       <div class="lg:w-1/2">

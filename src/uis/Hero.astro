@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import phone from "@assets/phones.png";
 import Btn from "@uis/components/btn.astro";
+import type { BtnOptions } from "@models/uis/btn";
 
 const hero = {
   title: "Reduce tu factura eléctrica con energía solar",
@@ -23,16 +24,19 @@ const hero = {
       text: "Ahorra hasta 70%",
     },
   ],
+  additional_text: "Hecho en Colombia",
 };
 
-const { title, subtitle, primary_action, secondary_action, items } = hero;
+const { title, subtitle, primary_action, secondary_action, additional_text } =
+  hero;
+const theme: BtnOptions = { size: "lg", pallette: "dark", theme: "primary" };
 ---
 
 <section id="inicio" class="bg-block-dark">
   <div class="container mx-auto px-6">
     <div class="flex flex-col items-center lg:flex-row">
       <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
-        <h1 class="text-hero text-primary-dark mb-6 leading-tight font-bold">
+        <h1 class="text-primary-dark mb-6 text-5xl leading-tight font-bold">
           {title}
         </h1>
         <p class="text-inline-dark mb-8 text-xl leading-relaxed">
@@ -42,23 +46,30 @@ const { title, subtitle, primary_action, secondary_action, items } = hero;
         <div
           class="mb-8 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
         >
-          <Btn label={primary_action} size="lg" />
-          <Btn label={secondary_action} type="outline" size="lg" />
+          <Btn label={primary_action} {...theme} type="classic" />
+          <Btn label={secondary_action} {...theme} type="outline" />
         </div>
 
-        <div
-          class="text-inline-dark flex flex-wrap items-center space-x-6 text-sm"
-        >
-          {
-            items.map(({ icon, text }) => {
-              return (
-                <div class="flex items-center space-x-2">
-                  <span class="text-2xl">{icon}</span>
-                  <span class="font-medium">{text}</span>
-                </div>
-              );
-            })
-          }
+        <div class="bg-success-dark/10 inline-flex rounded-4xl p-4">
+          <svg width="28" height="28" viewBox="0 0 32 32">
+            <g fill="none">
+              <path
+                fill="#c8102e"
+                d="M21.014 4.16C18.172 4.663 16 8.017 16 8.017s-2.172-3.354-5.014-3.857C3.981 2.925 1.088 9.092 2.25 13.682c1.65 6.476 9.33 12.943 12.44 15.342a2.13 2.13 0 0 0 2.622 0c3.108-2.398 10.781-8.859 12.44-15.342c1.16-4.59-1.732-10.757-8.737-9.522Z"
+              ></path>
+              <path
+                fill="#003087"
+                d="M19.94 7.121c-2.23.38-3.938 2.927-3.938 2.927s-1.709-2.556-3.94-2.927c-5.506-.936-7.787 3.747-6.862 7.24c1.26 4.78 6.974 9.686 9.543 11.694c.746.584 1.77.584 2.516 0c2.57-2.011 8.284-6.92 9.544-11.694c.915-3.493-1.356-8.176-6.863-7.24Z"
+              ></path>
+              <path
+                fill="#ffcd00"
+                d="M18.495 11.084c-1.422.256-2.501 2.008-2.501 2.008s-1.089-1.742-2.502-2.008c-3.501-.645-4.953 2.56-4.365 4.947c.738 3.015 3.887 5.76 5.657 7.104a2.001 2.001 0 0 0 2.439-.001c1.768-1.343 4.913-4.09 5.657-7.103c.569-2.386-.883-5.592-4.385-4.947Z"
+              ></path>
+            </g>
+          </svg>
+          <span class="text-success-dark px-2 text-xl font-bold">
+            {additional_text}
+          </span>
         </div>
       </div>
 

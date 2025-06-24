@@ -1,0 +1,39 @@
+---
+import type { BtnOptions } from "@models/uis/btn";
+import type { DualCta, CtaOptions, DualCtaOptions } from "@models/uis/cta";
+
+import { getBasicBy } from "@helpers/themes";
+import Btn from "@uis/components/btn.astro";
+import DualTitle from "@uis/components/dualTitle.astro";
+import DualPill from "@uis/components/dualPill.astro";
+import DualList from "@uis/components/dualList.astro";
+
+interface Props extends DualCta, DualCtaOptions {}
+const { secondary_action, additional_text, pallette } = Astro.props;
+const { title, description, items, primary_action, theme } = Astro.props;
+const themes: BtnOptions = { pallette, size: "md" };
+const primaryTheme: BtnOptions = { ...themes, theme };
+const secondaryTheme: BtnOptions = { ...themes, theme: getBasicBy(theme) };
+---
+
+<DualTitle {...primaryTheme} title={title} />
+<p class="text-inline-card mb-6 text-xl">
+  {description}
+</p>
+
+<div class="mb-8 space-y-4">
+  {
+    items.map(({ icon, text }) => {
+      return <DualList {...secondaryTheme} icon={icon} text={text} />;
+    })
+  }
+</div>
+
+<div class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+  <Btn label={primary_action} {...primaryTheme} type="classic" />
+  <Btn label={secondary_action} {...primaryTheme} type="outline" />
+</div>
+
+<slot />
+
+<DualPill {...secondaryTheme} additional_text={additional_text} />

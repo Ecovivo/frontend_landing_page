@@ -1,0 +1,36 @@
+---
+import type { DualTitle } from "@models/uis/title";
+
+interface Props extends DualTitle {}
+const { title, theme, pallette } = Astro.props;
+---
+
+{
+  theme === "primary" && pallette === "card" && (
+    <h2 class="text-primary-card mb-4 text-center text-3xl font-bold">
+      {title}
+    </h2>
+  )
+}
+{
+  theme === "primary" && pallette === "light" && (
+    <h2 class="text-primary-light mb-4 text-center text-3xl font-bold">
+      {title}
+    </h2>
+  )
+}
+<!-- success -->
+{
+  theme === "success" && pallette === "card" && (
+    <h2 class="text-success-card mb-4 text-center text-3xl font-bold">
+      {title}
+    </h2>
+  )
+}
+{
+  theme === "success" && pallette === "light" && (
+    <h2 class="text-success-light mb-4 text-center text-3xl font-bold">
+      {title}
+    </h2>
+  )
+}

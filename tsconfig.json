@@ -13,6 +13,7 @@
       "@stores": ["src/stores/"],
       "@stores/*": ["src/stores/*"],
       "@assets/*": ["src/assets/*"],
+      "@helpers/*": ["src/helpers/*"],
       "@models": ["src/models/"],
       "@models/*": ["src/models/*"],
       "@hooks/*": ["src/hooks/*"],

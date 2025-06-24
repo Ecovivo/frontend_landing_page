@@ -1,128 +1,111 @@
 ---
+import AloneCta from "@uis/components/blueprints/aloneCta.astro";
+import type { CtaOptions, Cta } from "@models/uis/cta";
 
+const Us = {
+  title: "Ayúdanos a democratizar la energía solar",
+  description:
+    "Tu apoyo permite que más colombianos accedan a energía limpia y económica",
+  primary_action: "Donar ahora",
+  secondary_action: "Contribuir en GitHub",
+};
+const { title, description, primary_action, secondary_action } = Us;
+const Options: CtaOptions = { pallette: "card", theme: "primary" };
+const Alone: Cta = { title, description, primary_action, secondary_action };
 ---
 
-<!-- COLABORACIÓN -->
 <section class="bg-block-card py-16">
-  <div class="container mx-auto px-6">
-    <h2 class="text-section mb-4 text-center font-bold">
-      Ayúdanos a democratizar la energía solar
-    </h2>
-    <p class="mb-12 text-center text-xl text-gray-600">
-      Tu apoyo permite que más colombianos accedan a energía limpia y económica
-    </p>
-
+  <AloneCta {...Alone} {...Options}>
     <div class="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <!-- Meta Actual -->
-      <div class="bg-primary/5 border-primary rounded-xl border p-6">
+      <div class="bg-success-card/5 border-success-card rounded-xl border p-6">
         <div class="mb-4 text-center">
           <span class="text-4xl">🎯</span>
-          <h3 class="text-primary mt-2 text-xl font-bold">
+          <h3 class="text-success-card mt-2 text-xl font-bold">
             META ACTUAL: $65,000 COP
           </h3>
-          <p class="font-medium text-gray-600">
+          <p class="text-inline-light font-medium">
             Mantener servicios online por 1 mes
           </p>
         </div>
-        <ul class="space-y-2 text-gray-700">
+        <ul class="text-inline-light space-y-2">
           <li class="flex items-center space-x-2">
-            <span class="text-primary">•</span>
+            <span class="text-success-card">•</span>
             <span>Servidores y bases de datos actualizadas</span>
           </li>
           <li class="flex items-center space-x-2">
-            <span class="text-primary">•</span>
+            <span class="text-success-card">•</span>
             <span>Precios de componentes en tiempo real</span>
           </li>
           <li class="flex items-center space-x-2">
-            <span class="text-primary">•</span>
+            <span class="text-success-card">•</span>
             <span>Soporte técnico disponible 24/7</span>
           </li>
         </ul>
       </div>
 
-      <!-- Meta Expansión -->
-      <div class="bg-secondary/5 border-secondary rounded-xl border p-6">
+      <div class="bg-primary-card/5 border-primary-card rounded-xl border p-6">
         <div class="mb-4 text-center">
           <span class="text-4xl">🌎</span>
           <h3 class="text-secondary mt-2 text-xl font-bold">
             META EXPANSIÓN: $3,000 USD
           </h3>
-          <p class="font-medium text-gray-600">Llevar la app a un nuevo país</p>
+          <p class="text-inline-card font-medium">
+            Llevar la app a un nuevo país
+          </p>
         </div>
-        <ul class="space-y-2 text-gray-700">
+        <ul class="text-inline-card space-y-2">
           <li class="flex items-center space-x-2">
-            <span class="text-secondary">•</span>
+            <span class="text-primary-card">•</span>
             <span>Investigación de mercado local</span>
           </li>
           <li class="flex items-center space-x-2">
-            <span class="text-secondary">•</span>
+            <span class="text-primary-card">•</span>
             <span>Adaptación de precios y proveedores</span>
           </li>
           <li class="flex items-center space-x-2">
-            <span class="text-secondary">•</span>
+            <span class="text-primary-card">•</span>
             <span>Red de soporte en nuevo país</span>
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- Formas de Colaborar -->
     <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
       <div class="text-center">
         <div class="mb-4 text-5xl">💰</div>
-        <h3 class="mb-4 text-xl font-bold">DONACIONES ECONÓMICAS</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>• Transferencia bancaria (disponible ahora)</li>
-          <li>• Nequi/Bancolombia (próximamente)</li>
-          <li>• Desde $10,000 COP hace la diferencia</li>
+        <h3 class="text-success-card mb-4 text-xl font-bold">
+          DONACIONES ECONÓMICAS
+        </h3>
+        <ul class="text-inline-card space-y-2">
+          <li>Transferencia bancaria (disponible ahora)</li>
+          <li>Nequi/Bancolombia (próximamente)</li>
+          <li>Desde $10,000 COP hace la diferencia</li>
         </ul>
       </div>
 
       <div class="text-center">
         <div class="mb-4 text-5xl">👨‍💻</div>
-        <h3 class="mb-4 text-xl font-bold">CONTRIBUCIONES TÉCNICAS</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>• Código en GitHub</li>
-          <li>• Reportar bugs y mejoras</li>
-          <li>• Testing en diferentes dispositivos</li>
+        <h3 class="text-primary-card mb-4 text-xl font-bold">
+          CONTRIBUCIONES TÉCNICAS
+        </h3>
+        <ul class="text-inline-card space-y-2">
+          <li>Código en GitHub</li>
+          <li>Reportar bugs y mejoras</li>
+          <li>Testing en diferentes dispositivos</li>
         </ul>
       </div>
 
       <div class="text-center">
         <div class="mb-4 text-5xl">📢</div>
-        <h3 class="mb-4 text-xl font-bold">DIFUSIÓN DEL PROYECTO</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li>• Compartir con familiares y amigos</li>
-          <li>• Redes sociales y comunidades</li>
-          <li>• Presentar en eventos locales</li>
+        <h3 class="text-danger-card mb-4 text-xl font-bold">
+          DIFUSIÓN DEL PROYECTO
+        </h3>
+        <ul class="text-inline-card space-y-2">
+          <li>Compartir con familiares y amigos</li>
+          <li>Redes sociales y comunidades</li>
+          <li>Presentar en eventos locales</li>
         </ul>
       </div>
     </div>
-
-    <div class="bg-gray-light mb-8 rounded-xl p-8 text-center">
-      <p class="text-lg leading-relaxed text-gray-700 italic">
-        "Nacimos como una tesis académica en la Universidad Santo Tomás y
-        crecimos hasta convertirnos en una herramienta que está transformando
-        vidas. Con tu apoyo, podemos llegar a cada rincón de Colombia y
-        Latinoamérica."
-      </p>
-    </div>
-
-    <div class="text-center">
-      <div
-        class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-      >
-        <button
-          class="bg-primary hover:bg-primary-dark rounded-lg px-8 py-4 text-lg font-medium text-white transition-colors"
-        >
-          Donar ahora
-        </button>
-        <button
-          class="border-gray-dark text-gray-dark hover:bg-gray-dark rounded-lg border px-8 py-4 text-lg font-medium transition-colors hover:text-white"
-        >
-          Contribuir en GitHub
-        </button>
-      </div>
-    </div>
-  </div>
+  </AloneCta>
 </section>

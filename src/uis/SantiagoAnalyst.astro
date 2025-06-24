@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import phone from "@assets/phones.png";
-import Btn from "@uis/components/btn.astro";
+import DualCta from "@uis/components/blueprints/dualCta.astro";
 
 const Analyst = {
   title: "Datos precisos para decisiones informadas",
@@ -25,8 +25,6 @@ const Analyst = {
     },
   ],
 };
-const { title, description, items } = Analyst;
-const { primary_action, secondary_action, additional_text } = Analyst;
 ---
 
 <section class="bg-block-light py-16">
@@ -41,36 +39,7 @@ const { primary_action, secondary_action, additional_text } = Analyst;
       </div>
 
       <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
-        <h2 class="text-section text-primary-light mb-4 text-center font-bold">
-          {title}
-        </h2>
-        <p class="text-inline-light mb-6 text-xl">
-          {description}
-        </p>
-
-        <div class="mb-8 space-y-4">
-          {
-            items.map(({ icon, text }) => {
-              return (
-                <div class="flex items-center space-x-3">
-                  <span class="text-xl">{icon}</span>
-                  <span class="text-success-light font-medium">{text}</span>
-                </div>
-              );
-            })
-          }
-        </div>
-
-        <div
-          class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-        >
-          <Btn label={primary_action} pallette="light" />
-          <Btn label={secondary_action} pallette="light" type="outline" />
-        </div>
-
-        <div class="bg-success-light/10 inline-block rounded-4xl p-4">
-          <span class="text-success-light font-bold">{additional_text}</span>
-        </div>
+        <DualCta {...Analyst} theme="primary" pallette="light" />
       </div>
     </div>
   </div>

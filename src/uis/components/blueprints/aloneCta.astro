@@ -10,9 +10,7 @@ const actions: BtnOptions = { theme, pallette, size: "lg" };
 ---
 
 <div class="container mx-auto px-6">
-  <h2
-    class={`text-section text-${theme}-${pallette} mb-4 text-center font-bold`}
-  >
+  <h2 class={`text-3xl text-${theme}-${pallette} mb-4 text-center font-bold`}>
     {title}
   </h2>
   <p class={`text-inline-${pallette} mb-12 text-center text-xl`}>
@@ -23,8 +21,8 @@ const actions: BtnOptions = { theme, pallette, size: "lg" };
     <div
       class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
     >
-      <Btn label={primary_action} {...actions} />
-      <Btn label={secondary_action} type="outline" {...actions} />
+      <Btn label={primary_action} {...actions} type="classic" />
+      <Btn label={secondary_action} {...actions} type="outline" />
     </div>
   </div>
 </div>

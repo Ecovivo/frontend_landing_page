@@ -8,3 +8,7 @@ export interface BtnOptions
     ThemeAble,
     TypeAble,
     SizeAble {}
+
+export interface Btn {
+  label: string;
+}

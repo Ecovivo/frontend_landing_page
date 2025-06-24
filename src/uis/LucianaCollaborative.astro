@@ -1,7 +1,6 @@
 ---
 import StepByStep from "./StepByStep.astro";
-import Btn from "@uis/components/btn.astro";
-import type { BtnOptions } from "@models/uis/btn";
+import DualCta from "@uis/components/blueprints/dualCta.astro";
 
 const Collaborative = {
   title: "Apoyo paso a paso para tu comunidad",
@@ -25,47 +24,14 @@ const Collaborative = {
     },
   ],
 };
-const { title, description, items } = Collaborative;
-const { primary_action, secondary_action, additional_text } = Collaborative;
-const actions: BtnOptions = { pallette: "light", theme: "warning" };
 ---
 
 <section class="bg-block-light py-64">
   <div class="container mx-auto px-6">
     <div class="flex flex-col items-center lg:flex-row">
       <div class="mb-8 lg:mb-0 lg:w-1/2 lg:pr-12">
-        <h2 class="text-section text-warning-light mb-4 text-center font-bold">
-          {title}
-        </h2>
-        <p class="text-inline-light mb-6 text-xl">
-          {description}
-        </p>
-
-        <div class="mb-8 space-y-4">
-          {
-            items.map(({ text, icon }) => {
-              return (
-                <div class="flex items-center space-x-3">
-                  <span class="font-medium">{icon}</span>
-                  <span class="text-primary-light text-xl">{text}</span>
-                </div>
-              );
-            })
-          }
-        </div>
-
-        <div
-          class="mb-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-        >
-          <Btn label={primary_action} {...actions} />
-          <Btn label={secondary_action} type="outline" {...actions} />
-        </div>
-
-        <div class="bg-primary-light/10 inline-block rounded-4xl p-4">
-          <span class="text-primary-light font-bold">{additional_text}</span>
-        </div>
+        <DualCta {...Collaborative} theme="success" pallette="light" />
       </div>
-
       <div class="lg:w-1/2">
         <StepByStep />
       </div>
